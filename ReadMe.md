@@ -33,6 +33,7 @@ Case 3: Specify custom input and output directories in the Config file.
 toml format
 
 ```toml
+// config.toml
 input = "public"
 output = "dist"
 ```
