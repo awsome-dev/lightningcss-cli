@@ -18,6 +18,11 @@ const DEFAULT_CONFIG_FILE: &str = "lightningcss.config.toml";
 #[derive(Parser, Deserialize)]
 #[command(author, version, about, long_about = None)]
 struct Cli {
+
+    /// Write out only once.
+    #[arg(long)]
+    build: bool,
+
     /// Input directory to list css files
     #[arg(short, long, value_name = "DIR", default_value = DEFAULT_INPUT)]
     input: PathBuf,
@@ -29,10 +34,6 @@ struct Cli {
     /// Config file
     #[arg(short, long, value_name = "FILE", default_value = DEFAULT_CONFIG_FILE)]
     config: Option<PathBuf>,
-
-    /// Build mode
-    #[arg(long)]
-    build: bool,
 
 }
 
