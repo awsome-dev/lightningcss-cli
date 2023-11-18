@@ -18,11 +18,11 @@ const DEFAULT_CONFIG_FILE: &str = "lightningcss.config.toml";
 #[derive(Parser, Deserialize)]
 #[command(author, version, about, long_about = None)]
 struct Cli {
-    /// Input directory to list files
+    /// Input directory to list css files
     #[arg(short, long, value_name = "DIR", default_value = DEFAULT_INPUT)]
     input: PathBuf,
 
-    /// Output directory to copy files to
+    /// Output directory to minify css files to
     #[arg(short, long, value_name = "DIR", default_value = DEFAULT_OUTPUT)]
     output: PathBuf,
 
